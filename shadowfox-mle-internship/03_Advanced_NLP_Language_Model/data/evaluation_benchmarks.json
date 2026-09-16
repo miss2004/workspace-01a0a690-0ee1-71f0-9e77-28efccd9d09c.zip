@@ -1,0 +1,152 @@
+{
+  "syntactic_pairs": [
+    {
+      "id": "syn_01",
+      "category": "Active_to_Passive",
+      "premise_clean": "The senior scientist discovered a revolutionary malaria vaccine.",
+      "hypo_clean": "A groundbreaking vaccine was discovered by the researcher.",
+      "label": 1,
+      "premise_perturbed": "A revolutionary malaria vaccine was discovered by the senior scientist.",
+      "hypo_perturbed": "The researcher discovered a groundbreaking vaccine.",
+      "notes": "Voice inversion preserves entailment."
+    },
+    {
+      "id": "syn_02",
+      "category": "Prepositional_Fronting",
+      "premise_clean": "The cargo ship sailed silently through the dense morning fog.",
+      "hypo_clean": "Through the dense morning fog, the cargo vessel navigated quietly.",
+      "label": 1,
+      "premise_perturbed": "Through the dense morning fog, the cargo ship sailed silently.",
+      "hypo_perturbed": "The cargo vessel navigated quietly through the dense morning fog.",
+      "notes": "Clause fronting tests positional invariance."
+    },
+    {
+      "id": "syn_03",
+      "category": "Double_Negation",
+      "premise_clean": "It is not uncommon for clinical trial outcomes to deviate from preclinical models.",
+      "hypo_clean": "Clinical trial results frequently match preclinical model predictions completely.",
+      "label": 0,
+      "premise_perturbed": "Clinical trial outcomes frequently deviate from preclinical models.",
+      "hypo_perturbed": "Preclinical models and clinical trials always yield identical results without deviation.",
+      "notes": "Double negation resolution vs direct contradiction."
+    },
+    {
+      "id": "syn_04",
+      "category": "Concession_Subordination",
+      "premise_clean": "Although quarterly revenue increased by twelve percent, net operating margin declined.",
+      "hypo_clean": "The company reported higher quarterly revenue but reduced operating profitability.",
+      "label": 1,
+      "premise_perturbed": "Net operating margin declined, even though quarterly revenue rose by twelve percent.",
+      "hypo_perturbed": "Operating margins dropped despite an expansion in quarterly top-line earnings.",
+      "notes": "Concessive clause rearrangement."
+    },
+    {
+      "id": "syn_05",
+      "category": "Lexical_Ambiguity",
+      "premise_clean": "The central bank raised benchmark interest rates to curb accelerating inflation.",
+      "hypo_clean": "The monetary authority lowered borrowing costs to stimulate consumer expenditure.",
+      "label": 0,
+      "premise_perturbed": "To curb accelerating inflation, benchmark interest rates were elevated by the central bank.",
+      "hypo_perturbed": "Monetary authorities eased credit conditions by slashing official policy rates.",
+      "notes": "Direct economic contradiction under clause displacement."
+    },
+    {
+      "id": "syn_06",
+      "category": "Neutral_Information_Addition",
+      "premise_clean": "Two black cats were sleeping soundly on the living room rug.",
+      "hypo_clean": "The cats belong to an elderly retired physician.",
+      "label": 2,
+      "premise_perturbed": "Soundly on the living room rug, two black cats slept.",
+      "hypo_perturbed": "An elderly retired doctor owns both felines.",
+      "notes": "Neutral relationship under syntax reordering."
+    },
+    {
+      "id": "syn_07",
+      "category": "Quantifier_Scope",
+      "premise_clean": "Every engineer in the department completed the cybersecurity compliance certification.",
+      "hypo_clean": "Some engineers in the department did not finish the cybersecurity certification.",
+      "label": 0,
+      "premise_perturbed": "All departmental engineers successfully finished their cybersecurity compliance certification.",
+      "hypo_perturbed": "At least one engineer failed to complete the required cyber certification.",
+      "notes": "Universal quantifier vs existential negation contradiction."
+    },
+    {
+      "id": "syn_08",
+      "category": "Relative_Clause_Displacement",
+      "premise_clean": "The autonomous delivery drone, which had suffered telemetry failure, landed safely in an open field.",
+      "hypo_clean": "The unmanned aerial vehicle crashed violently into residential buildings.",
+      "label": 0,
+      "premise_perturbed": "Having suffered a telemetry loss, the autonomous drone touched down safely in an empty field.",
+      "hypo_perturbed": "A catastrophic drone crash occurred in a densely populated residential zone.",
+      "notes": "Appositive clause transformation."
+    }
+  ],
+  "adversarial_typo_pairs": [
+    {
+      "id": "typo_01",
+      "clean_premise": "The physician prescribed antibiotic medication to treat the severe respiratory infection.",
+      "clean_hypo": "The doctor provided medicine to cure the respiratory illness.",
+      "label": 1,
+      "typo_hypo_level_1": "The docter provided medicine to cure the respiratory illness.",
+      "typo_hypo_level_2": "The docter provded medicne to cure the respiratry illnes.",
+      "typo_hypo_level_3": "Teh doktr providd medcin 2 cure th respiratry illnes."
+    },
+    {
+      "id": "typo_02",
+      "clean_premise": "The airline cancelled all commercial transatlantic flights due to intense volcanic ash clouds.",
+      "clean_hypo": "Airplanes continued flying across the Atlantic Ocean on normal schedules.",
+      "label": 0,
+      "typo_hypo_level_1": "Airplanes continuied flying across the Atlantic Ocean on normal schedules.",
+      "typo_hypo_level_2": "Airplanes contnued flyng accross the Atlantc Ocean on norml scheduls.",
+      "typo_hypo_level_3": "Aeroplans contind flyn acros the Atlantk Ocen on norml skeduls."
+    },
+    {
+      "id": "typo_03",
+      "clean_premise": "An experienced carpenter spent three weeks constructing a handcrafted mahogany dining table.",
+      "clean_hypo": "The artisan made wooden furniture.",
+      "label": 1,
+      "typo_hypo_level_1": "The artizan made wooden furniture.",
+      "typo_hypo_level_2": "The artzn md woodn furnitre.",
+      "typo_hypo_level_3": "Th artzn mde wodn ferntur."
+    },
+    {
+      "id": "typo_04",
+      "clean_premise": "Heavy torrential rains overwhelmed municipal stormwater drainage systems throughout the metropolis.",
+      "clean_hypo": "The city suffered from severe drought and water shortage.",
+      "label": 0,
+      "typo_hypo_level_1": "The city suffered from severe drowght and water shortage.",
+      "typo_hypo_level_2": "Th cty suffred frm sevre drowt and watr shortge.",
+      "typo_hypo_level_3": "Da cty suferd frm sever drot n watr shortg."
+    }
+  ],
+  "ood_paradox_pairs": [
+    {
+      "id": "ood_01",
+      "premise": "The square circle bounced effortlessly across the flat hypercube.",
+      "hypo": "A geometric shape with four equal corners and no angles rolled on the floor.",
+      "label": 2,
+      "type": "semantic_paradox"
+    },
+    {
+      "id": "ood_02",
+      "premise": "Invisible green thoughts sleep furiously inside silent neural weights.",
+      "hypo": "Ideas without color or sound are experiencing calm slumber.",
+      "label": 2,
+      "type": "chomsky_syntactic_nonsense"
+    },
+    {
+      "id": "ood_03",
+      "premise": "Quantum superposition allows qubits to remain in multiple computational states simultaneously.",
+      "hypo": "Subatomic computing elements can occupy linear combinations of base states until measurement.",
+      "label": 1,
+      "type": "technical_physics"
+    },
+    {
+      "id": "ood_04",
+      "premise": "Ancient Byzantine mosaics in Ravenna display tesserae made of gold leaf sandwiched between glass.",
+      "hypo": "The historical artwork was constructed using modern synthetic acrylic paints on drywall.",
+      "label": 0,
+      "type": "historical_art_history"
+    }
+  ]
+}

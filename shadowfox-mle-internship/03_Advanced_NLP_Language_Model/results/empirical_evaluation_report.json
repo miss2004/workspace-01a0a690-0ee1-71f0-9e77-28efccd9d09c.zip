@@ -1,0 +1,152 @@
+{
+  "model": "cross-encoder/nli-deberta-v3-small",
+  "RQ1_syntactic_invariance": {
+    "invariance_rate": 1.0,
+    "mean_prob_shift": 0.0566231831908226,
+    "details": [
+      {
+        "id": "syn_01",
+        "category": "Active_to_Passive",
+        "true_label": "Entailment",
+        "clean_pred": "Entailment",
+        "clean_conf": 0.9963096976280212,
+        "perturbed_pred": "Entailment",
+        "perturbed_conf": 0.9942262768745422,
+        "shift": 0.002083420753479004,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_02",
+        "category": "Prepositional_Fronting",
+        "true_label": "Entailment",
+        "clean_pred": "Entailment",
+        "clean_conf": 0.9983770847320557,
+        "perturbed_pred": "Entailment",
+        "perturbed_conf": 0.9975953698158264,
+        "shift": 0.000781714916229248,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_03",
+        "category": "Double_Negation",
+        "true_label": "Contradiction",
+        "clean_pred": "Contradiction",
+        "clean_conf": 0.9995262622833252,
+        "perturbed_pred": "Contradiction",
+        "perturbed_conf": 0.9998815059661865,
+        "shift": 0.0003552436828613281,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_04",
+        "category": "Concession_Subordination",
+        "true_label": "Entailment",
+        "clean_pred": "Entailment",
+        "clean_conf": 0.9965283274650574,
+        "perturbed_pred": "Entailment",
+        "perturbed_conf": 0.9736494421958923,
+        "shift": 0.02287888526916504,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_05",
+        "category": "Lexical_Ambiguity",
+        "true_label": "Contradiction",
+        "clean_pred": "Contradiction",
+        "clean_conf": 0.9900179505348206,
+        "perturbed_pred": "Contradiction",
+        "perturbed_conf": 0.9994693398475647,
+        "shift": 0.00945138931274414,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_06",
+        "category": "Neutral_Information_Addition",
+        "true_label": "Neutral",
+        "clean_pred": "Neutral",
+        "clean_conf": 0.9991604089736938,
+        "perturbed_pred": "Neutral",
+        "perturbed_conf": 0.9991084933280945,
+        "shift": 5.1915645599365234e-05,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_07",
+        "category": "Quantifier_Scope",
+        "true_label": "Contradiction",
+        "clean_pred": "Contradiction",
+        "clean_conf": 0.9933046698570251,
+        "perturbed_pred": "Contradiction",
+        "perturbed_conf": 0.5760371088981628,
+        "shift": 0.4172675609588623,
+        "label_preserved": true
+      },
+      {
+        "id": "syn_08",
+        "category": "Relative_Clause_Displacement",
+        "true_label": "Contradiction",
+        "clean_pred": "Contradiction",
+        "clean_conf": 0.9999288320541382,
+        "perturbed_pred": "Contradiction",
+        "perturbed_conf": 0.9998134970664978,
+        "shift": 0.00011533498764038086,
+        "label_preserved": true
+      }
+    ]
+  },
+  "RQ2_typo_fragmentation": {
+    "table": [
+      {
+        "level": "clean_hypo",
+        "accuracy": 1.0,
+        "avg_confidence": 0.9987758994102478,
+        "avg_tokens": 25.25,
+        "token_expansion_ratio": 1.0
+      },
+      {
+        "level": "typo_hypo_level_1",
+        "accuracy": 0.75,
+        "avg_confidence": 0.8871566504240036,
+        "avg_tokens": 26.25,
+        "token_expansion_ratio": 1.04
+      },
+      {
+        "level": "typo_hypo_level_2",
+        "accuracy": 0.5,
+        "avg_confidence": 0.9755134284496307,
+        "avg_tokens": 32.0,
+        "token_expansion_ratio": 1.27
+      },
+      {
+        "level": "typo_hypo_level_3",
+        "accuracy": 0.25,
+        "avg_confidence": 0.9729874581098557,
+        "avg_tokens": 31.75,
+        "token_expansion_ratio": 1.26
+      }
+    ]
+  },
+  "RQ3_calibration": {
+    "raw_ece": 0.13130861520767217,
+    "raw_brier": 0.3014370799064636,
+    "optimal_temperature": 2.45,
+    "calibrated_ece": 0.05118932936388177,
+    "calibrated_brier": 0.24800494073862078,
+    "raw_bins": [
+      {
+        "bin": "(0.40, 0.60]",
+        "count": 3,
+        "avg_confidence": 0.5358251929283142,
+        "accuracy": 0.6666666666666666,
+        "calibration_gap": 0.13084147373835242
+      },
+      {
+        "bin": "(0.80, 1.00]",
+        "count": 29,
+        "avg_confidence": 0.9934259057044983,
+        "accuracy": 0.8620689655172413,
+        "calibration_gap": 0.13135694018725697
+      }
+    ]
+  }
+}
